@@ -15,6 +15,7 @@ import UIKit
 protocol MainPresentationLogic
 {
     func presentLoadedBabyNamesInfo(response: Main.LoadBabyNamesInfo.Response)
+    func presentLoadedBabyNamesInfoFromApi(response: Main.LoadBabyNamesInfoFromApi.Response)
     func presentPopularBabyNameInfo(response: Main.PopularBabyName.Response)
 }
 
@@ -28,6 +29,12 @@ class MainPresenter: MainPresentationLogic
     {
         let viewModel = Main.LoadBabyNamesInfo.ViewModel(babyNamesInfo: response.babyNamesInfo, error: response.error)
         viewController?.displayLoadedBabyNamesInfo(viewModel: viewModel)
+    }
+    
+    func presentLoadedBabyNamesInfoFromApi(response: Main.LoadBabyNamesInfoFromApi.Response)
+    {
+        let viewModel = Main.LoadBabyNamesInfoFromApi.ViewModel(babyNamesInfo: response.babyNamesInfo, error: response.error)
+        viewController?.displayLoadedBabyNamesInfoFromApi(viewModel: viewModel)
     }
     
     func presentPopularBabyNameInfo(response: Main.PopularBabyName.Response) {

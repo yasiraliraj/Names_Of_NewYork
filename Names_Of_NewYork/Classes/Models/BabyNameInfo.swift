@@ -26,4 +26,13 @@ struct BabyNameInfo {
         numberOfBabies = Int(info[4]) ?? 0
         rank           = Int(info[5]) ?? 0
     }
+    
+    init(yearOfBirth: Int, gender: String, ethnicity: String, name: String, numberOfBabies: Int, rank: Int) {
+        self.yearOfBirth     = yearOfBirth
+        self.gender          = gender
+        self.ethnicity       = ethnicity
+        self.name            = name
+        self.numberOfBabies  = numberOfBabies
+        self.rank            = rank
+    }
 }

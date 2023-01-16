@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPz-99-8hP">
-                                <rect key="frame" x="20" y="65" width="353" height="334.66666666666669"/>
+                                <rect key="frame" x="20" y="65" width="353" height="335.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7ll-X7-VDC">
-                                        <rect key="frame" x="8" y="8" width="337" height="318.66666666666669"/>
+                                        <rect key="frame" x="8" y="8" width="337" height="319.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lisa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0k-A7-KM7">
                                                 <rect key="frame" x="0.0" y="0.0" width="337" height="28.666666666666668"/>
@@ -56,7 +56,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZB-d1-hlt">
-                                                <rect key="frame" x="0.0" y="94.666666666666657" width="337" height="50"/>
+                                                <rect key="frame" x="0.0" y="95" width="337" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ux-r8-YB6">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
@@ -83,7 +83,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJK-A6-QkT">
-                                                <rect key="frame" x="0.0" y="152.66666666666666" width="337" height="50"/>
+                                                <rect key="frame" x="0.0" y="153" width="337" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-6k-YnP">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
@@ -110,7 +110,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-Yq-1UU">
-                                                <rect key="frame" x="0.0" y="210.66666666666669" width="337" height="50"/>
+                                                <rect key="frame" x="0.0" y="211.33333333333331" width="337" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of Babies:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNj-cc-PU3">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
@@ -137,7 +137,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzT-g2-Ru8">
-                                                <rect key="frame" x="0.0" y="268.66666666666669" width="337" height="50"/>
+                                                <rect key="frame" x="0.0" y="269.33333333333331" width="337" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2e-E6-hYH">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
@@ -181,13 +181,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7W-KF-tOf">
-                                <rect key="frame" x="20" y="628" width="353" height="15.666666666666629"/>
+                                <rect key="frame" x="20" y="632.33333333333337" width="353" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-kc-Ak5">
-                                <rect key="frame" x="20" y="703.66666666666663" width="353" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="708" width="353" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get Popular Name"/>
                                 <connections>
@@ -195,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B5-AW-8nm">
-                                <rect key="frame" x="20" y="651.66666666666663" width="172.66666666666666" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="656" width="172.66666666666666" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Male"/>
                                 <connections>
@@ -203,11 +203,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIg-lg-NQx">
-                                <rect key="frame" x="200.66666666666663" y="651.66666666666663" width="172.33333333333337" height="34.333333333333371"/>
+                                <rect key="frame" x="200.66666666666663" y="656" width="172.33333333333337" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Female"/>
                                 <connections>
                                     <action selector="femaleButtonTapped" destination="VEX-Ln-oHy" eventType="touchUpInside" id="lEH-2K-Pth"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-Ry-EPi">
+                                <rect key="frame" x="0.0" y="408" width="393" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VEX-Ln-oHy" id="GcL-lE-ygo"/>
+                                    <outlet property="delegate" destination="VEX-Ln-oHy" id="nfH-zF-eJL"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJz-OM-jLv">
+                                <rect key="frame" x="20" y="759.66666666666663" width="353" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Load Data"/>
+                                <connections>
+                                    <action selector="loadDataFromApiButtonTapped" destination="VEX-Ln-oHy" eventType="touchUpInside" id="mG7-S8-zwh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,21 +234,29 @@
                             <constraint firstItem="3B5-AW-8nm" firstAttribute="leading" secondItem="mPz-99-8hP" secondAttribute="leading" id="BLE-4C-qGz"/>
                             <constraint firstItem="s9F-gx-T4J" firstAttribute="trailing" secondItem="mPz-99-8hP" secondAttribute="trailing" constant="20" id="ByW-hA-PsX"/>
                             <constraint firstItem="B7W-KF-tOf" firstAttribute="trailing" secondItem="mPz-99-8hP" secondAttribute="trailing" id="CsR-Ew-hpf"/>
-                            <constraint firstItem="s9F-gx-T4J" firstAttribute="bottom" secondItem="GFC-kc-Ak5" secondAttribute="bottom" constant="80" id="O7Y-tH-N2W"/>
+                            <constraint firstItem="s9F-gx-T4J" firstAttribute="bottom" secondItem="qJz-OM-jLv" secondAttribute="bottom" constant="24" id="Fd5-sY-nNn"/>
+                            <constraint firstItem="qJz-OM-jLv" firstAttribute="trailing" secondItem="GFC-kc-Ak5" secondAttribute="trailing" id="MZw-Qq-S6a"/>
                             <constraint firstItem="kIg-lg-NQx" firstAttribute="trailing" secondItem="mPz-99-8hP" secondAttribute="trailing" id="RF3-lA-h6N"/>
+                            <constraint firstItem="ibH-Ry-EPi" firstAttribute="top" secondItem="mPz-99-8hP" secondAttribute="bottom" constant="8" id="Zkf-YP-YXb"/>
+                            <constraint firstItem="s9F-gx-T4J" firstAttribute="trailing" secondItem="ibH-Ry-EPi" secondAttribute="trailing" id="azn-0h-mnG"/>
                             <constraint firstItem="kIg-lg-NQx" firstAttribute="leading" secondItem="3B5-AW-8nm" secondAttribute="trailing" constant="8" symbolic="YES" id="gcW-kb-Svo"/>
                             <constraint firstItem="3B5-AW-8nm" firstAttribute="top" secondItem="B7W-KF-tOf" secondAttribute="bottom" constant="8" id="hNH-kU-882"/>
+                            <constraint firstItem="ibH-Ry-EPi" firstAttribute="leading" secondItem="s9F-gx-T4J" secondAttribute="leading" id="kUl-YW-S34"/>
                             <constraint firstItem="kIg-lg-NQx" firstAttribute="bottom" secondItem="3B5-AW-8nm" secondAttribute="bottom" id="l7x-be-5ql"/>
+                            <constraint firstItem="qJz-OM-jLv" firstAttribute="leading" secondItem="GFC-kc-Ak5" secondAttribute="leading" id="p5b-Cg-Be4"/>
                             <constraint firstItem="B7W-KF-tOf" firstAttribute="leading" secondItem="mPz-99-8hP" secondAttribute="leading" id="qby-Yb-frl"/>
                             <constraint firstItem="3B5-AW-8nm" firstAttribute="width" secondItem="kIg-lg-NQx" secondAttribute="width" id="rFg-oB-AoM"/>
                             <constraint firstItem="GFC-kc-Ak5" firstAttribute="leading" secondItem="B7W-KF-tOf" secondAttribute="leading" id="rb1-fd-ytE"/>
                             <constraint firstItem="GFC-kc-Ak5" firstAttribute="trailing" secondItem="kIg-lg-NQx" secondAttribute="trailing" id="rxx-ui-bde"/>
                             <constraint firstItem="mPz-99-8hP" firstAttribute="leading" secondItem="s9F-gx-T4J" secondAttribute="leading" constant="20" id="sQW-dK-g30"/>
+                            <constraint firstItem="qJz-OM-jLv" firstAttribute="top" secondItem="GFC-kc-Ak5" secondAttribute="bottom" constant="17.333333333333258" id="taT-mj-2wJ"/>
+                            <constraint firstItem="B7W-KF-tOf" firstAttribute="top" secondItem="ibH-Ry-EPi" secondAttribute="bottom" constant="8" id="vL9-FR-5Op"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="birthYearLabel" destination="xaI-YG-HfJ" id="i7g-oJ-qW2"/>
                         <outlet property="ethnicityLabel" destination="exf-mm-R0L" id="Yui-fR-T6m"/>
+                        <outlet property="ethnicityPickerView" destination="ibH-Ry-EPi" id="Tr1-1q-yK7"/>
                         <outlet property="femaleButton" destination="kIg-lg-NQx" id="8fT-bR-ycg"/>
                         <outlet property="genderLabel" destination="3aJ-0m-Wlw" id="Axq-Zb-w1d"/>
                         <outlet property="maleButton" destination="3B5-AW-8nm" id="1nq-TW-XMJ"/>

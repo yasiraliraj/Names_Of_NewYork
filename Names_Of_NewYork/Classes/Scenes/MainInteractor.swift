@@ -15,6 +15,7 @@ import UIKit
 protocol MainBusinessLogic
 {
     func loadBabyNameInfo(request: Main.LoadBabyNamesInfo.Request)
+    func loadBabyNameInfoFromApi(request: Main.LoadBabyNamesInfoFromApi.Request)
     func getPopularBabyNameInfo(request: Main.PopularBabyName.Request)
 }
 
@@ -38,8 +39,15 @@ class MainInteractor: MainBusinessLogic, MainDataStore
         }
     }
     
+    func loadBabyNameInfoFromApi(request: Main.LoadBabyNamesInfoFromApi.Request) {
+        worker.loadBabyNameInfoFromApi { [weak self] babyNamesInfo, error in
+            let response = Main.LoadBabyNamesInfoFromApi.Response(babyNamesInfo: babyNamesInfo, error: error)
+            self?.presenter?.presentLoadedBabyNamesInfoFromApi(response: response)
+        }
+    }
+    
     func getPopularBabyNameInfo(request: Main.PopularBabyName.Request) {
-        worker.getPopularBabyNameInfo(gender: request.gender, from: request.babyNamesInfo) { [weak self] babyNameInfo, error in
+        worker.getPopularBabyNameInfo(gender: request.gender, ethnicity: request.ethnicity, from: request.babyNamesInfo) { [weak self] babyNameInfo, error in
             let response = Main.PopularBabyName.Response(babyNameInfo: babyNameInfo, error: error)
             self?.presenter?.presentPopularBabyNameInfo(response: response)
         }

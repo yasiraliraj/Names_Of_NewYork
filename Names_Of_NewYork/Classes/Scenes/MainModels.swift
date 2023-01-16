@@ -33,11 +33,29 @@ enum Main
         }
     }
     
+    enum LoadBabyNamesInfoFromApi
+    {
+        struct Request
+        {
+        }
+        struct Response
+        {
+            var babyNamesInfo: [BabyNameInfo]?
+            var error: AppError?
+        }
+        struct ViewModel
+        {
+            var babyNamesInfo: [BabyNameInfo]?
+            var error: AppError?
+        }
+    }
+    
     enum PopularBabyName
     {
         struct Request
         {
             var gender: String
+            var ethnicity: String
             var babyNamesInfo: [BabyNameInfo]
         }
         struct Response

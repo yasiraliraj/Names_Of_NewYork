@@ -35,15 +35,55 @@ class MainWorker {
         }
     }
     
+    typealias LoadBabyNameInfoFromApiCompletion = ([BabyNameInfo]?, AppError?) -> ()
+    func loadBabyNameInfoFromApi(completion: @escaping LoadBabyNameInfoCompletion) {
+        let url = URL(string: "https://data.cityofnewyork.us/api/views/25th-nujf/rows.json")!
+        let urlRequest = URLRequest(url: url)
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if let error = error {
+                completion(nil, AppError(description: error.localizedDescription))
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let dataDictionary = try JSONSerialization.jsonObject(with: data) as? [String: Any?]
+                    if let dataNode = dataDictionary?["data"] as? [[Any?]] {
+                        var babyNames: [BabyNameInfo] = []
+                        for node in dataNode {
+                            let babyName = BabyNameInfo(yearOfBirth:    Int(node[8] as? String ?? "0") ?? 0,
+                                                        gender:         node[9] as? String ?? "",
+                                                        ethnicity:      node[10] as? String ?? "",
+                                                        name:           node[11] as? String ?? "",
+                                                        numberOfBabies: Int(node[12] as? String ?? "0") ?? 0,
+                                                        rank:           Int(node[13] as? String ?? "0") ?? 0
+                                           )
+                            babyNames.append(babyName)
+                        }
+                        completion(babyNames, nil)
+                    }
+                    
+                } catch {
+                    completion(nil, AppError(description: error.localizedDescription))
+                }
+            } else {
+                completion(nil, AppError(description: "Something went wrong."))
+            }
+            
+        }
+        dataTask.resume()
+    }
+    
     typealias PopularBabyNameInfoCompletion = (BabyNameInfo?, AppError?) -> ()
-    func getPopularBabyNameInfo(gender: String, from babyNamesInfo: [BabyNameInfo], completion: @escaping PopularBabyNameInfoCompletion) {
+    func getPopularBabyNameInfo(gender: String, ethnicity: String, from babyNamesInfo: [BabyNameInfo], completion: @escaping PopularBabyNameInfoCompletion) {
         guard !babyNamesInfo.isEmpty else {
             completion(nil, AppError(description: "Unable to find baby name."))
             return
         }
         
-        let babyNamesByGender = babyNamesInfo.filter { $0.gender.lowercased() == gender.lowercased()}
-        let sortedBabyNamesByNoOfBabies = babyNamesByGender.sorted { $0.numberOfBabies > $1.numberOfBabies }
+        let babyNamesByGenderAndEth = babyNamesInfo.filter { $0.gender.lowercased() == gender.lowercased() && $0.ethnicity == ethnicity }
+        let sortedBabyNamesByNoOfBabies = babyNamesByGenderAndEth.sorted { $0.numberOfBabies > $1.numberOfBabies }
         let randomIndex = Int(arc4random_uniform(UInt32(sortedBabyNamesByNoOfBabies.count)))
         
         completion(sortedBabyNamesByNoOfBabies[randomIndex], nil)

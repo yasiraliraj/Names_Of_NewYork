@@ -20,6 +20,7 @@ enum Gender: String {
 protocol MainDisplayLogic: AnyObject
 {
     func displayLoadedBabyNamesInfo(viewModel: Main.LoadBabyNamesInfo.ViewModel)
+    func displayLoadedBabyNamesInfoFromApi(viewModel: Main.LoadBabyNamesInfoFromApi.ViewModel)
     func displayPopularBabyNameInfo(viewModel: Main.PopularBabyName.ViewModel)
 }
 
@@ -92,8 +93,11 @@ class MainViewController: UIViewController, MainDisplayLogic
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var popularNameButton: UIButton!
     
+    @IBOutlet weak var ethnicityPickerView: UIPickerView!
+    
     private var selectedGender = Gender.male
     private var babyNamesInfo: [BabyNameInfo]?
+    private var ethnicities: [String]?
     
     func loadBabyNamesInfo()
     {
@@ -107,8 +111,23 @@ class MainViewController: UIViewController, MainDisplayLogic
         
         DispatchQueue.main.async {
             self.popularNameButton.isEnabled = self.babyNamesInfo != nil && !(self.babyNamesInfo ?? []).isEmpty
+            self.ethnicities = Array(Set(self.babyNamesInfo?.compactMap { $0.ethnicity } ?? []))
+            self.ethnicityPickerView.reloadAllComponents()
         }
         
+        
+        debugPrint("Loaded Baby Name count = \(String(describing: viewModel.babyNamesInfo?.count))")
+        debugPrint("Loaded Baby Name error = \(String(describing: viewModel.error?.localizedDescription))")
+    }
+    
+    func displayLoadedBabyNamesInfoFromApi(viewModel: Main.LoadBabyNamesInfoFromApi.ViewModel) {
+        self.babyNamesInfo = viewModel.babyNamesInfo
+        
+        DispatchQueue.main.async {
+            self.popularNameButton.isEnabled = self.babyNamesInfo != nil && !(self.babyNamesInfo ?? []).isEmpty
+            self.ethnicities = Array(Set(self.babyNamesInfo?.compactMap { $0.ethnicity } ?? []))
+            self.ethnicityPickerView.reloadAllComponents()
+        }
         
         debugPrint("Loaded Baby Name count = \(String(describing: viewModel.babyNamesInfo?.count))")
         debugPrint("Loaded Baby Name error = \(String(describing: viewModel.error?.localizedDescription))")
@@ -159,7 +178,30 @@ extension MainViewController {
     }
     
     @IBAction func getPopularNameInfoButtonTapped() {
-        let request = Main.PopularBabyName.Request(gender: selectedGender.rawValue, babyNamesInfo: babyNamesInfo ?? [])
+        let ethnicity = self.ethnicities?[ethnicityPickerView.selectedRow(inComponent: 0)] ?? ""
+        let request = Main.PopularBabyName.Request(gender: selectedGender.rawValue, ethnicity: ethnicity, babyNamesInfo: babyNamesInfo ?? [])
         interactor?.getPopularBabyNameInfo(request: request)
+    }
+    
+    @IBAction func loadDataFromApiButtonTapped() {
+        let request = Main.LoadBabyNamesInfoFromApi.Request()
+        interactor?.loadBabyNameInfoFromApi(request: request)
+    }
+}
+
+
+// MARK: UIPickerView Delegate & DataSource
+extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ethnicities?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.ethnicities?[row] ?? ""
     }
 }
