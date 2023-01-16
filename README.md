@@ -1,1 +1,3 @@
 # Names_Of_NewYork
+
+This Swift project is a baby name generator that allows users to select an ethnicity and gender, and then displays a random name from a list of almost 50000 records. The names are sourced from a local JSON file and a live API, providing a diverse range of options for users to choose from. The user interface allows for easy selection of ethnicity and gender, and the randomly generated name is displayed in a clear and visually appealing manner. Additionally, the user has the option to generate more names, making the process of finding the perfect baby name quick and easy.
